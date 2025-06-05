@@ -504,8 +504,6 @@ impl Parser<'_> {
 		Ok(res)
 	}
 
-	// TODO(gguillemas): Deprecated in 2.0.0. Drop this in 3.0.0 in favor of DEFINE ACCESS
-
 	pub async fn parse_define_param(&mut self, ctx: &mut Stk) -> ParseResult<DefineParamStatement> {
 		let (if_not_exists, overwrite) = if self.eat(t!("IF")) {
 			expected!(self, t!("NOT"));
