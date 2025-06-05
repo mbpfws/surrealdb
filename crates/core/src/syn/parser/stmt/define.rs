@@ -218,7 +218,7 @@ impl Parser<'_> {
 		};
 		let name = self.next_token_value()?;
 		expected!(self, t!("ON"));
-		let base = self.parse_base(false)?;
+		let base = self.parse_base()?;
 
 		let mut res = DefineUserStatement::from_parsed_values(
 			name,
@@ -324,7 +324,7 @@ impl Parser<'_> {
 		let name = self.next_token_value()?;
 		expected!(self, t!("ON"));
 		// TODO: Parse base should no longer take an argument.
-		let base = self.parse_base(false)?;
+		let base = self.parse_base()?;
 
 		let mut res = DefineAccessStatement {
 			name,

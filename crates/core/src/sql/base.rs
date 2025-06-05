@@ -1,4 +1,3 @@
-use crate::sql::Ident;
 use revision::revisioned;
 use serde::{Deserialize, Serialize};
 use std::fmt;
@@ -35,7 +34,6 @@ impl From<Base> for crate::expr::Base {
 			Base::Root => Self::Root,
 			Base::Ns => Self::Ns,
 			Base::Db => Self::Db,
-			Base::Sc(sc) => Self::Sc(sc.into()),
 		}
 	}
 }
